@@ -115,6 +115,5 @@ app.use('/api', api);
 app.use('/auth', auth);
 
 app.listen(process.env.PORT || 8888, process.env.IP || "0.0.0.0", () => {
-    let addr = app.address();
-    console.log("Chat server listening at", addr.address + ":" + addr.port);
+    console.log("Oversouled backed server listening at", (process.env.IP || "0.0.0.0")  + ":" +  (process.env.PORT || 8888));
 }
