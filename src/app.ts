@@ -57,7 +57,7 @@ api.post('/oneupdate', (req, res) => {
 api.get('/current-user', isAuthenticated ,(req, res) => {
     console.log(req.userId);
     res.json(users[req.userId]);
-})
+});
 
 api.post('/current-user', isAuthenticated ,(req, res) => {
     const user: any= users[req.userId];
@@ -65,7 +65,7 @@ api.post('/current-user', isAuthenticated ,(req, res) => {
     user.firstName= req.body.firstName;
     user.lastName= req.body.lastName;
     res.json(user);
-})
+});
 
 
 auth.post('/register', (req, res) =>{
@@ -86,7 +86,7 @@ auth.post('/login', (reg,res)=>{
     } else {
         return res.json({success: true, user: foundUser.user, tuhken: sendToken(foundUser)})
     }
-})
+});
 
 function sendToken(user) {
     return jwt.sign(user.id, 'imastand1nkey')
@@ -116,4 +116,4 @@ app.use('/auth', auth);
 
 app.listen(process.env.PORT || 8888, process.env.IP || "0.0.0.0", () => {
     console.log("Oversouled backed server listening at", (process.env.IP || "0.0.0.0")  + ":" +  (process.env.PORT || 8888));
-}
+});
