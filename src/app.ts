@@ -7,6 +7,10 @@ const jwt = require('jsonwebtoken');
 const app = express();
 const bodyparser = require('body-parser');
 
+const mongo = require('mongodb');
+const monk = require('monk');
+const logDb = monk((process.env.IP || "0.0.0.0") + ':27017/logs');
+
 const messages= [
     {
         updateBy: 'nobody',
@@ -32,11 +36,28 @@ app.use((req,res,next) => {
     next();
 });
 
+// Make our db accessible to our router
+app.use((req,res,next) => {
+    req.logDb = logDb;
+    next();
+});
+
 const api = express.Router();
 const auth = express.Router();
 
 api.get('/', (req, res) => {
-    res.send('sup homie');
+    // res.send('sup homie');
+    
+    const logData = req.logDb;
+    var collection = logData.get('mainLogs');
+    collection.find({}, {}, (e,data) => {
+        if(e){
+            res.send(e);
+        } else {
+            res.send(data);
+        }
+    })
+    
 });
 
 api.get('/release', (req, res) => {
