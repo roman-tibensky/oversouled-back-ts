@@ -9,7 +9,7 @@
   },
   "author": "",
   "license": "ISC",
-  "main": "server/src/app.js",
+  "main": "server/app.js",
   "dependencies": {
     "@types/body-parser": "^1.16.5",
     "@types/express": "^4.0.37",
