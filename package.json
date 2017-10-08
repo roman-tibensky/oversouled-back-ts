@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "run": "node server/app.js",
+    "start": "node server/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -17,6 +17,9 @@
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
     "jsonwebtoken": "^8.0.0",
-    "typescript": "^2.5.3"
+    "typescript": "^2.5.3",
+    "mongodb": "^2.2.25",
+    "monk": "^4.0.0",
+    "morgan": "~1.7.0"
   }
 }
