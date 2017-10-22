@@ -25,7 +25,7 @@ const messages= [
 const users: any[] = [{
     user: 'doop',
     email: 'noop',
-    pass: 'coop'
+    pass: 'loop'
 }];
 
 app.use(bodyparser.json());
