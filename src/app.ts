@@ -3,6 +3,8 @@
  */
 
 import { getFirstPlayer } from './databaseMan/player';
+import { getFirstMap } from './databaseMan/map';
+import { getUsedTiles } from './databaseMan/tiles';
 
 const express = require('express');
 const jwt = require('jsonwebtoken');
@@ -112,6 +114,55 @@ auth.post('/register', (req, res) =>{
 
 
 });
+
+
+
+api.get('/new-game', (req, res) => {
+
+    getFirstPlayer().then(playerData =>{
+        getFirstMap().then(mapData =>{
+            let uniqueTiles = [];
+            for(let row of mapData.tiles) {
+                for(let tile of row){
+                    if(uniqueTiles.indexOf(tile) === -1) {
+                        uniqueTiles.push(tile);
+                    }
+                }
+            }
+            
+            console.log(uniqueTiles);
+            
+            getUsedTiles(uniqueTiles).then(tileData =>{
+                res.send({
+                    playerData: playerData,
+                    mapData: mapData,
+                    tileData: tileData
+                });
+            }).catch(e => {
+                console.log(e);
+                res.status(400).send(e);
+            });
+            
+        }).catch(e => {
+            console.log(e);
+            res.status(400).send(e);
+        });
+            
+            
+            
+    }).catch(e => {
+        console.log(e);
+        res.status(400).send(e);
+    });
+    
+    
+    
+});
+
+
+
+
+
 
 auth.post('/login', (reg,res)=>{
     const foundUser = users.find(oneUser => (oneUser.user === reg.body.user && oneUser.pass === reg.body.pass));
