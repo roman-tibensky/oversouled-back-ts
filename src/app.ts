@@ -5,6 +5,8 @@
 import { getFirstPlayer } from './databaseMan/player';
 import { getFirstMap } from './databaseMan/map';
 import { getUsedTiles } from './databaseMan/tiles';
+import { getAllReleaseNotes } from './databaseMan/release-notes';
+
 
 const express = require('express');
 const jwt = require('jsonwebtoken');
@@ -77,7 +79,13 @@ api.get('/', (req, res) => {
 });
 
 api.get('/release', (req, res) => {
-    res.json(messages);
+    
+    
+    getAllReleaseNotes().then(messages =>{
+        res.json(messages);
+    }).catch(e => {
+        res.status(400).send(e);
+    });
 });
 
 api.get('/release/:user', (req, res) => {
