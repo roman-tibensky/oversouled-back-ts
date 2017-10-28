@@ -17,6 +17,7 @@
     "express": "^4.15.4",
     "jsonwebtoken": "^8.0.0",
     "typescript": "^2.5.3",
+    "cloudant": "^1.8.0",
     "mongodb": "^2.2.25",
     "monk": "^4.0.0",
     "morgan": "~1.7.0"

@@ -2,15 +2,20 @@
  * Created by aRTie on 21/08/2017.
  */
 
+import { getFirstPlayer } from './databaseMan/player';
+
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const app = express();
 const bodyparser = require('body-parser');
 
+
+
+/*
 const mongo = require('mongodb');
 const monk = require('monk');
 const logDb = monk((process.env.IP || "0.0.0.0") + ':27017/logs');
-
+*/
 const messages= [
     {
         updateBy: 'nobody',
@@ -38,7 +43,7 @@ app.use((req,res,next) => {
 
 // Make our db accessible to our router
 app.use((req,res,next) => {
-    req.logDb = logDb;
+//    req.logDb = logDb;
     next();
 });
 
@@ -47,7 +52,7 @@ const auth = express.Router();
 
 api.get('/', (req, res) => {
     // res.send('sup homie');
-    
+    /*
     const logData = req.logDb;
     var collection = logData.get('mainLogs');
     collection.find({}, {}, (e,data) => {
@@ -56,7 +61,16 @@ api.get('/', (req, res) => {
         } else {
             res.send(data);
         }
-    })
+    })*/
+    
+    getFirstPlayer().then(data =>{
+        res.send(data);
+    }).catch(e => {
+        console.log(e);
+        res.send(e);
+    });
+    
+    
     
 });
 
