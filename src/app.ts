@@ -12,6 +12,8 @@ const express = require('express');
 const jwt = require('jsonwebtoken');
 const app = express();
 const bodyparser = require('body-parser');
+const encrkey = require('../env.json').encrkey;
+const test = require('../env.json').test;
 
 
 
@@ -209,5 +211,6 @@ app.use('/api', api);
 app.use('/auth', auth);
 
 app.listen(process.env.PORT || 8888, process.env.IP || "0.0.0.0", () => {
+    console.log(test);
     console.log("Oversouled backed server listening at", (process.env.IP || "0.0.0.0")  + ":" +  (process.env.PORT || 8888));
 });
