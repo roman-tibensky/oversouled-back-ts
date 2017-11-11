@@ -125,7 +125,7 @@ auth.post('/register', (req, res) =>{
 
 
 
-api.get('/new-game', (req, res) => {
+api.post('/new-game', (req, res) => {
 
     getFirstPlayer().then(playerData =>{
         getFirstMap().then(mapData =>{
@@ -138,17 +138,23 @@ api.get('/new-game', (req, res) => {
                 }
             }
             
-            getUsedTiles(uniqueTiles).then(tileData =>{
-                res.send({
-                    playerData: playerData,
-                    mapData: mapData,
-                    tileData: tileData
+            getNpcs(req.body.lvl, mapData).then(npcData => {
+                getUsedTiles(uniqueTiles).then(tileData =>{
+                    res.send({
+                        playerData: playerData,
+                        npcData: npcData,
+                        mapData: mapData,
+                        tileData: tileData
+                    });
+                }).catch(e => {
+                    console.log(e);
+                    res.status(400).send(e);
                 });
             }).catch(e => {
                 console.log(e);
                 res.status(400).send(e);
             });
-            
+                
         }).catch(e => {
             console.log(e);
             res.status(400).send(e);
