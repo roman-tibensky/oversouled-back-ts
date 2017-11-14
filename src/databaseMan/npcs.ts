@@ -18,7 +18,7 @@ export function getNpcs(lvl, mapData, tileData): Promise<any> {
             let creatureArr = [];
             while (currPoints < finalAmmount) {
                 const pickCreature: number = Math.floor(Math.random() * body.rows.length);
-                let oneCreature = _.cloneDeep(body.rows[pickCreature].doc);
+                let oneCreature = _.cloneDeep(body.rows[pickCreature]);
                 oneCreature = placeNpc(creatureArr, oneCreature, mapData, tilesIndex, tileData);
                 currPoints += body.rows[pickCreature].doc.mapCount;
                 creatureArr.push(_.cloneDeep(oneCreature));
@@ -42,8 +42,8 @@ function placeNpc(creatureArr:any[], alteredCreature:any , mapData: any,  tilesI
         
         if(tileData.rows[tilesIndex.indexOf(mapData.tiles[y][x])].doc.canBodyEnter){
             let isUsed = false;
-            for(alteredCreature of creatureArr){
-                if(alteredCreature.x === x && alteredCreature.y === y) {
+            for(const oneCreature of creatureArr){
+                if(oneCreature.x === x && oneCreature.y === y) {
                     isUsed = true;
                 }
             }
@@ -51,6 +51,7 @@ function placeNpc(creatureArr:any[], alteredCreature:any , mapData: any,  tilesI
                 
                 alteredCreature.x = x;
                 alteredCreature.y = y;
+                alteredCreature._id = alteredCreature.id + '-' + y + '-' + x;
                 newX = x;
             }
             
