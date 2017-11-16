@@ -6,6 +6,7 @@ import { getFirstPlayer } from './databaseMan/player';
 import { getFirstMap } from './databaseMan/map';
 import { getUsedTiles } from './databaseMan/tiles';
 import { getAllReleaseNotes } from './databaseMan/release-notes';
+import { getNpcs } from './databaseMan/npcs';
 
 
 const express = require('express');
@@ -125,7 +126,7 @@ auth.post('/register', (req, res) =>{
 
 
 
-api.get('/new-game', (req, res) => {
+api.post('/new-game', (req, res) => {
 
     getFirstPlayer().then(playerData =>{
         getFirstMap().then(mapData =>{
@@ -139,16 +140,22 @@ api.get('/new-game', (req, res) => {
             }
             
             getUsedTiles(uniqueTiles).then(tileData =>{
-                res.send({
-                    playerData: playerData,
-                    mapData: mapData,
-                    tileData: tileData
+                getNpcs(req.body.lvl, mapData, tileData).then(npcData => {
+                    res.send({
+                        playerData: playerData,
+                        npcData: npcData,
+                        mapData: mapData,
+                        tileData: tileData
+                    });
+                }).catch(e => {
+                    console.log(e);
+                    res.status(400).send(e);
                 });
             }).catch(e => {
                 console.log(e);
                 res.status(400).send(e);
             });
-            
+                
         }).catch(e => {
             console.log(e);
             res.status(400).send(e);
