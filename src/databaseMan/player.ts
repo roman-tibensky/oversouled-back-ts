@@ -8,7 +8,7 @@ export function getFirstPlayer(): Promise<any> {
             if(err){
                 rej(err);
             }
-            res(body);
+            res({doc: body});
         })
     })
 }

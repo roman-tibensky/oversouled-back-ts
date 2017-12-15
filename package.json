@@ -5,7 +5,8 @@
   "main": "server/app.js",
   "scripts": {
     "start": "tsc & node server/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
   },
   "author": "",
   "license": "ISC",
