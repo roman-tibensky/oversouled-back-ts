@@ -4,6 +4,8 @@ const mapCloud: any = nano.db.use('npcs');
 
 export function getNpcs(lvl, mapData, tileData): Promise<any> {
     const tilesIndex = tileData.rows.map(oneTile => oneTile.id);
+    const nameArr = [];
+    const countArr = [];
     
     return new Promise((res, rej) => {
         mapCloud.view('views','npc-by-level-' + lvl, {revs_info: false, include_docs: true}, (err: any, body: any) => {
@@ -19,7 +21,16 @@ export function getNpcs(lvl, mapData, tileData): Promise<any> {
             while (currPoints < finalAmmount) {
                 const pickCreature: number = Math.floor(Math.random() * body.rows.length);
                 let oneCreature = _.cloneDeep(body.rows[pickCreature]);
+                let creaturePos = nameArr.indexOf(oneCreature.doc.name);
                 oneCreature = placeNpc(creatureArr, oneCreature, mapData, tilesIndex, tileData);
+                if(creaturePos < 0) {
+                    nameArr.push(oneCreature.doc.name);
+                    countArr.push(0);
+                } else {
+                    countArr[creaturePos]++;
+                    oneCreature.doc.name = oneCreature.doc.name + countArr[creaturePos];
+
+                }
                 currPoints += body.rows[pickCreature].doc.mapCount;
                 creatureArr.push(_.cloneDeep(oneCreature));
             }

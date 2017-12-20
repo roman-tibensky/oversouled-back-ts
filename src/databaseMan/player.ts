@@ -8,6 +8,7 @@ export function getFirstPlayer(): Promise<any> {
             if(err){
                 rej(err);
             }
+            body.name = 'You';
             res({doc: body});
         })
     })
