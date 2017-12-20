@@ -4,7 +4,7 @@ const playerCloud: any = nano.db.use('players');
 
 export function getFirstPlayer(): Promise<any> {
     return new Promise((res, rej) => {
-        playerCloud.get('FIRST_SOUL', {revs_info: false}, (err: any, body: any) => {
+        playerCloud.get('UNIVERSAL_MIGRATOR', {revs_info: false}, (err: any, body: any) => {
             if(err){
                 rej(err);
             }
