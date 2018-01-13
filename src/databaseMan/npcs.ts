@@ -69,7 +69,14 @@ function placeNpc(creatureArr:any[], alteredCreature:any , mapData: any,  tilesI
         }
         
     }
-    
+
+    alteredCreature.doc.baseLevel = Math.floor(
+        (alteredCreature.doc.baseStr +
+        alteredCreature.doc.baseAgi +
+        alteredCreature.doc.baseDex +
+        alteredCreature.doc.baseMgc +
+        alteredCreature.doc.baseDef +
+        alteredCreature.doc.baseRes) / 5);
     
     return alteredCreature;
 }
