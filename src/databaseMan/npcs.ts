@@ -34,9 +34,33 @@ export function getNpcs(lvl, mapData, tileData): Promise<any> {
                 currPoints += body.rows[pickCreature].doc.mapCount;
                 creatureArr.push(_.cloneDeep(oneCreature));
             }
-            
-            
-            res(creatureArr);
+
+            const applySpecial = Math.random();
+            console.log(applySpecial)
+            if(applySpecial <= 0.1) {
+                mapCloud.view('views', 'special-npc-by-level-' + lvl, {
+                    revs_info: false,
+                    include_docs: true
+                }, (err: any, body: any) => {
+                    const pickCreature: number = Math.floor(Math.random() * body.rows.length);
+                    let oneCreature = _.cloneDeep(body.rows[pickCreature]);
+                    let creaturePos = nameArr.indexOf(oneCreature.doc.name);
+                    oneCreature = placeNpc(creatureArr, oneCreature, mapData, tilesIndex, tileData);
+                    if (creaturePos < 0) {
+                        nameArr.push(oneCreature.doc.name);
+                        countArr.push(0);
+                    } else {
+                        countArr[creaturePos]++;
+                        oneCreature.doc.name = oneCreature.doc.name + countArr[creaturePos];
+
+                    }
+                    creatureArr.push(_.cloneDeep(oneCreature));
+
+                    res(creatureArr);
+                });
+            } else {
+                res(creatureArr);
+            }
         })
     })
 }
