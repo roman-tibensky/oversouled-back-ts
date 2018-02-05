@@ -1,0 +1,10 @@
+{
+  "_id": "wall_1",
+  "_rev": "5-0dc3aaf7c03110fb135d95bebd26ef00",
+  "canEnter": false,
+  "canBodyEnter": false,
+  "healthAlt": 0,
+  "clickType": "tile",
+  "description": "A wall too thick to pass through. How vexing.",
+  "displayAs": "#"
+}

@@ -1,0 +1,10 @@
+{
+  "_id": "floor_1",
+  "_rev": "3-272bf529d12879e8a88e8a9f578e84a4",
+  "canEnter": true,
+  "canBodyEnter": true,
+  "healthAlt": 0,
+  "clickType": "tile",
+  "description": "Flat, solid ground. Uninteresting in every possible way.",
+  "displayAs": "."
+}

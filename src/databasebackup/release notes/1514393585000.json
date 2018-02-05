@@ -1,0 +1,23 @@
+{
+  "_id": "1514393585000",
+  "_rev": "1-fdf6bd2074afe7a6cc617d31139ee291",
+  "author": "aRTie",
+  "timestamp": 1514393585000,
+  "lore": [
+    "Despicable little thing! Could you sink any lower!",
+    "Are you really that desperate? Or do you simply have no compassion left...",
+    "When you rip their souls from their fles to claim it as your own...",
+    "Do you think it changes anything? Others will know.",
+    "They'll hunt you down and tear your suit of flesh apart.",
+    "You are not welcome here. The life you seek will reject you.",
+    "Over and over... and over..."
+  ],
+  "techNotes": {
+    "mainMessage": "Possession and basic combat ready. Includes:",
+    "fixList": [
+      "Possession and realease of creatures",
+      "Creature aggressions",
+      "Basic combat by bumping into things"
+    ]
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "_id": "20b04ac4ec2ac67c0f8c24ee99f26ca3",
+  "_rev": "23-e57cc0ddd71b053d76fefb3ee93b7fdf",
+  "baseHp": 50,
+  "baseHpAdjust": 0,
+  "mapCount": 2,
+  "movement": 0.5,
+  "baseLevel": 5,
+  "canEnter": true,
+  "canBodyEnter": false,
+  "canPossess": true,
+  "focus": "",
+  "clickType": "creature",
+  "color": "#FFFFFF",
+  "depthsAvailable": [
+    1,
+    2,
+    3,
+    7,
+    8,
+    9
+  ],
+  "displayAs": "c",
+  "name": "Cow",
+  "baseStr": 15,
+  "baseMgc": 0,
+  "baseAgi": 1,
+  "baseDex": 2,
+  "baseDef": 4,
+  "baseRes": 4,
+  "attckType": "phys",
+  "description": "A boorish animal. Four legs, tiny horns. Slow, bulky and too dumb to properly chew its food in one go.",
+  "skills": [
+    {
+      "name": "Mad Dash",
+      "effectSelf": {
+        "def": 2,
+        "duration": 5,
+        "levAdjust": 1,
+        "maxAdjust": 5
+      },
+      "effectTarget": {
+        "hp": -20,
+        "levAdjust": 3,
+        "maxAdjust": 5
+      },
+      "availableAt": 2,
+      "coolDown": 10,
+      "reach": 3,
+      "aoe": 0,
+      "aoeDuration": 0,
+      "attckType": "phys",
+      "description": "Loose all reason and ram your enemies"
+    },
+    {
+      "name": "Poison Gas",
+      "effectSelf": {},
+      "effectTarget": {
+        "hp": -2,
+        "duration": 5,
+        "levAdjust": 1,
+        "maxAdjust": 5,
+        "poison": true
+      },
+      "availableAt": 3,
+      "coolDown": 8,
+      "reach": 0,
+      "aoe": 3,
+      "aoeDuration": 0,
+      "attckType": "phys",
+      "description": "Your bowels disagree with you. Also with anyone caught in the blast"
+    }
+  ]
+}

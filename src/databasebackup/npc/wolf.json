@@ -1,0 +1,49 @@
+{
+  "_id": "1fe90b33416c2bebd516941d909d48a6",
+  "_rev": "3-219621245d818dd06b33a483ccd072ef",
+  "baseHp": 20,
+  "baseHpAdjust": 0,
+  "mapCount": 3,
+  "movement": 1.5,
+  "baseLevel": 3,
+  "canEnter": true,
+  "canBodyEnter": false,
+  "canPossess": true,
+  "focus": "",
+  "clickType": "creature",
+  "color": "#FFFFFF",
+  "depthsAvailable": [
+    1,
+    2,
+    3,
+    7,
+    8,
+    9
+  ],
+  "displayAs": "w",
+  "name": "Wolf",
+  "baseStr": 20,
+  "baseAgi": 3,
+  "baseDex": 8,
+  "baseMgc": 0,
+  "baseDef": 3,
+  "baseRes": 3,
+  "attckType": "phys",
+  "description": "An always angry, always hungry amalgamation of fur and fleas.",
+  "skills": [
+    {
+      "name": "Frantic bite",
+      "effectSelf": {},
+      "effectTarget": {
+        "attackTimes": 4
+      },
+      "availableAt": 2,
+      "coolDown": 8,
+      "reach": 1,
+      "aoe": 0,
+      "aoeDuration": 0,
+      "description": "",
+      "attckType": "phys"
+    }
+  ]
+}

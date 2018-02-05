@@ -1,0 +1,51 @@
+{
+  "_id": "1e4e1997fd675ff03a91cadc95b06117",
+  "_rev": "14-428cffff3476b791ee9f718f918a3c18",
+  "baseHp": 10,
+  "baseHpAdjust": 0,
+  "mapCount": 1,
+  "movement": 2,
+  "baseLevel": 3,
+  "canEnter": true,
+  "canBodyEnter": false,
+  "canPossess": true,
+  "focus": "",
+  "clickType": "creature",
+  "color": "#FFFFFF",
+  "depthsAvailable": [
+    1,
+    2,
+    3,
+    7,
+    8,
+    9
+  ],
+  "displayAs": "s",
+  "name": "Squirrel",
+  "baseStr": 6,
+  "baseAgi": 8,
+  "baseDex": 5,
+  "baseMgc": 0,
+  "baseDef": 0,
+  "baseRes": 0,
+  "attckType": "phys",
+  "description": "Small, frantic, furry creature. Its only purpose seems to be forgetting where it stashed its winter supplies.",
+  "skills": [
+    {
+      "name": "Rabid Bite",
+      "effectSelf": {},
+      "effectTarget": {
+        "hp": -100,
+        "levAdjust": 20,
+        "maxAdjust": 5
+      },
+      "availableAt": 2,
+      "coolDown": 10,
+      "reach": 3,
+      "aoe": 0,
+      "aoeDuration": 0,
+      "description": "",
+      "attckType": "phys"
+    }
+  ]
+}

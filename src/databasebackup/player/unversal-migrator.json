@@ -1,0 +1,10 @@
+{
+  "_id": "UNIVERSAL_MIGRATOR",
+  "_rev": "4-c48dd9d95ae4011fdf75c2c884680b8b",
+  "name": "Universal Migrator",
+  "hp": 15,
+  "hpAdjust": -1,
+  "movement": 1,
+  "description": "Lost. Unwelcome. A glitch that will soon cease to be.",
+  "possDistance": 3
+}

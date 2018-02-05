@@ -1,0 +1,18 @@
+{
+  "_id": "1515436329000",
+  "_rev": "1-70cdd17cc7eb0ef3b7e50e9075da3b89",
+  "author": "aRTie",
+  "timestamp": 1515436329000,
+  "lore": [
+    "Huh... who would've thought.",
+    "The creatures on this plane actually sometimes",
+    "try to dodge when they're about to be punched in the face.",
+    "Maybe there's hope for them yet."
+  ],
+  "techNotes": {
+    "mainMessage": "Possession and basic combat ready. Includes:",
+    "fixList": [
+      "Dodging mechanic added"
+    ]
+  }
+}

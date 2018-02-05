@@ -1,0 +1,20 @@
+{
+  "_id": "1510620092000",
+  "_rev": "1-0fe86a001183818d727693f30aba792c",
+  "author": "aRTie",
+  "timestamp": 1510620092000,
+  "lore": [
+    "Starting to recognise your surroundings?",
+    "It's not like knowing what's around you could help you.",
+    "Not like the creatures you pass through care for your predicament.",
+    "At least the view is a bit nicer now when you die..."
+  ],
+  "techNotes": {
+    "mainMessage": "Creature setup ready. Includes:",
+    "fixList": [
+      "Creature composition",
+      "Creature movement",
+      "Creature info"
+    ]
+  }
+}

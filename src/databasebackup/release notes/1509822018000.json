@@ -1,0 +1,27 @@
+{
+  "_id": "1509822018000",
+  "_rev": "1-50646822a87dac234a46a65e07b248f4",
+  "author": "aRTie",
+  "timestamp": 1509822018000,
+  "lore": [
+    "Poor, lonely soul.",
+    "Unwanted, Superfluous... nothing more than a glitch.",
+    "No body to call your own. No place for you in this or any other world.",
+    "You will never have a home, a life to call your own.",
+    "You will but wither, fade out of existence.",
+    "...",
+    "You still wish to cling to you conscience?",
+    "You STILL wish to try?",
+    "...",
+    "Well, who am I to stop you.",
+    "Just know that you've been warned though. There is no happy end for you."
+  ],
+  "techNotes": {
+    "mainMessage": "Base setup ready. Includes:",
+    "fixList": [
+      "Base map",
+      "Base movement",
+      "Base HP depletion"
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "_id": "1515938018000",
+  "_rev": "1-93956f7a7c8e2081ad0a391321f40cb6",
+  "author": "aRTie",
+  "timestamp": 1515938018000,
+  "lore": [
+    "So you're able familiarise yourself with the inhabited body now?",
+    "You're getting too used to this.",
+    "It'll just hurt all the more, once you're forced to let go..."
+  ],
+  "techNotes": {
+    "mainMessage": "Creature level setup ready. Includes:",
+    "fixList": [
+      "Level calculation",
+      "EXP gain",
+      "Leveling up and ability points distribution"
+    ]
+  }
+}

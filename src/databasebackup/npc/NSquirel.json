@@ -1,0 +1,29 @@
+{
+  "_id": "5ffbc503b5af5f19fcef06dc4fcdc127",
+  "_rev": "2-dfe982c298fe5fa462fa0da5cf86531e",
+  "baseHp": 1,
+  "baseHpAdjust": 0,
+  "mapCount": 2,
+  "movement": 1.5,
+  "baseLevel": 5,
+  "canEnter": true,
+  "canBodyEnter": false,
+  "canPossess": true,
+  "focus": "",
+  "clickType": "creature",
+  "color": "#111111",
+  "depthsAvailable": [
+    -1
+  ],
+  "displayAs": "N",
+  "name": "Ninja Squirrel",
+  "baseStr": 75,
+  "baseMgc": 75,
+  "baseAgi": 30,
+  "baseDex": 30,
+  "baseDef": 1,
+  "baseRes": 1,
+  "attckType": "phys",
+  "description": "You just KNOW something is there... And it fills you with dread.",
+  "skills": []
+}
