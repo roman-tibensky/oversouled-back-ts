@@ -13,8 +13,8 @@ const express = require('express');
 const jwt = require('jsonwebtoken');
 const app = express();
 const bodyparser = require('body-parser');
-const encrkey = require('../env.json').encrkey;
-const test = require('../env.json').test;
+// const encrkey = require('../env.json').encrkey;
+// const test = require('../env.json').test;
 
 
 
