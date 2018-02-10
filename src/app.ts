@@ -69,16 +69,16 @@ api.get('/', (req, res) => {
             res.send(data);
         }
     })*/
-    
+    /*
     getFirstPlayer().then(data =>{
         res.send(data);
     }).catch(e => {
         console.log(e);
         res.send(e);
     });
-    
-    
-    
+    */
+
+    res.send('OKAY');
 });
 
 api.get('/release', (req, res) => {
