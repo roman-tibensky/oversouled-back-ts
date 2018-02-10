@@ -1,5 +1,5 @@
 const nano: any = require('../couch').nano;
-const tilesCloud: any = nano.db.use('release_notes');
+const tilesCloud: any = 'N/A'; // nano.db.use('release_notes');
 
 export function getAllReleaseNotes(): Promise<any> {
     return new Promise((res, rej) => {

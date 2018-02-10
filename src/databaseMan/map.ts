@@ -1,5 +1,5 @@
 const nano: any = require('../couch').nano;
-const mapCloud: any = nano.db.use('maps');
+const mapCloud: any = 'N/A'; // nano.db.use('maps');
 
 export function getFirstMap(): Promise<any> {
     return new Promise((res, rej) => {

@@ -1,6 +1,6 @@
 
 const nano: any = require('../couch').nano;
-const playerCloud: any = nano.db.use('players');
+const playerCloud: any = 'N/A'; //  nano.db.use('players');
 
 export function getFirstPlayer(): Promise<any> {
     return new Promise((res, rej) => {

@@ -1,6 +1,6 @@
 import * as _ from 'lodash';
 const nano: any = require('../couch').nano;
-const mapCloud: any = nano.db.use('npcs');
+const mapCloud: any = 'N/A'; // nano.db.use('npcs');
 
 export function getNpcs(lvl, mapData, tileData): Promise<any> {
     const tilesIndex = tileData.rows.map(oneTile => oneTile.id);

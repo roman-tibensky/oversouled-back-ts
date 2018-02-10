@@ -6,8 +6,8 @@ let couchdb: any;
     // couchdb = require('./../env.json').cloud;
 //}
 
-const nano: any = require('cloudant')(couchdb.url);
-const couchUrl: any = couchdb.url;
+const nano: any = 'N/A'; //require('cloudant')(couchdb.url);
+const couchUrl: any = 'N/A'; //couchdb.url;
 
  module.exports = {
     couchUrl,
