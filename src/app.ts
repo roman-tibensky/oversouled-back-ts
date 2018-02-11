@@ -213,6 +213,8 @@ function isAuthenticated(req, res, next) {
 app.use('/api', api);
 app.use('/auth', auth);
 
+
+
 app.listen(process.env.PORT || 8080 /*, process.env.IP || "174.138.6.130" */, () => {
     console.log("Oversouled backed server listening at", (process.env.IP || "huh")  + ":" +  (process.env.PORT || 8080));
 });
